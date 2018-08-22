@@ -1,0 +1,26 @@
+{
+  "name": "babel-plugin-testable",
+  "version": "0.1.0",
+  "description": "Babel plugin that exports private members for testing purposes",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "test",
+    "testing",
+    "mocha",
+    "jest",
+    "testable",
+    "export"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.5.0"
+  },
+  "dependencies": {}
+}
