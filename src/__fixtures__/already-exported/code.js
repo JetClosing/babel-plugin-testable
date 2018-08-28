@@ -8,3 +8,6 @@ export function alreadyExportedFunction() {
 
 // @testable
 export const alreadyExportedBoolean = true;
+
+// @testable
+export default alreadyExportedDefault = () => 123456;
