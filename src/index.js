@@ -71,14 +71,14 @@ module.exports = function (input) {
 
     log('Processing node', path.node);
 
-    const isTestable = hasTestableComment(path);
-    if (!isTestable) {
-      log('Declaration is not testable');
+    if (types.isExportNamedDeclaration(path.parent)) {
+      log('Export already declared');
       return;
     }
 
-    if (types.isExportNamedDeclaration(path.parent)) {
-      log('Export already declared');
+    const isTestable = hasTestableComment(path);
+    if (!isTestable) {
+      log('Declaration is not testable');
       return;
     }
 
