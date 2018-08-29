@@ -36,6 +36,8 @@ or
 
 ## Usage
 
+In your source file, annotate the private members that should be exposed for testing with an `// @testable` comment. Example:
+
 ```javascript
 // @testable
 const MY_PRIVATE_CONSTANT = 'Some constant';
@@ -47,6 +49,17 @@ let someTestableField = true;
 class TestableClass {
   // Class code
 }
+```
+
+Then in your test file, you can import them like any other exported 
+declaration.
+
+```javascript
+import { publicFunction, MY_PRIVATE_CONSTANT } from '../';
+
+it('Test MY_PRIVATE_CONSTANT', () => {
+  expect(MY_PRIVATE_CONSTANT).toBe('Some constant');
+});
 ```
 
 ## Options
