@@ -20,7 +20,7 @@ export const putUser = (user) => {
     expireTime,
     data: user,
   };
-}
+};
 
 export const getUser = (firstName, lastName) => {
   const key = getKey(firstName, lastName);
@@ -35,4 +35,4 @@ export const getUser = (firstName, lastName) => {
   }
 
   return cachedData.data;
-}
+};
