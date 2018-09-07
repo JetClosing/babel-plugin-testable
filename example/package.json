@@ -1,0 +1,16 @@
+{
+  "name": "babel-plugin-testable-example",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "npm run test:jest && npm run test:mocha",
+    "test:jest": "jest jest-tests",
+    "test:mocha": "mocha --compilers js:babel-core/register mocha-tests"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-testable": "*",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.5.0",
+    "mocha": "^5.2.0"
+  }
+}
