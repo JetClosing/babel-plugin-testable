@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-testable",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Babel plugin that exports private members for testing purposes",
   "repository": "https://github.com/JetClosing/babel-plugin-testable.git",
   "main": "src/index.js",
