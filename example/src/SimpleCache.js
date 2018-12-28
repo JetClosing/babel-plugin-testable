@@ -1,5 +1,5 @@
 
-const DEFAULT_NAME  = 'NULL';
+const DEFAULT_NAME = 'NULL';
 
 // @testable
 const CACHE_TIME = 10000;

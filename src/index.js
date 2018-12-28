@@ -1,3 +1,4 @@
+// eslint-disable-next-line func-names
 module.exports = function (input) {
   const COMMENT_PLACEHOLDER = '##comment##';
   const DEFAULT_TEST_COMMENT = 'testable';
@@ -14,7 +15,16 @@ module.exports = function (input) {
     }
 
     console.log('[babel-plugin-testable]', ...logs);
-  }
+  };
+
+  const isTestEnvironment = () => {
+    const isTestEnv = (process.env.NODE_ENV === 'test'
+      || process.env.BABEL_ENV === 'test'
+      || typeof global.it === 'function');
+
+    log('isTestEnvironment', isTestEnv);
+    return isTestEnv;
+  };
 
   const readOptions = (options) => {
     debugEnabled = options.debug;
@@ -29,7 +39,7 @@ module.exports = function (input) {
     if (!enabled) {
       log('Plugin disabled');
     }
-  }
+  };
 
   const isTestableComment = (comment) => {
     const isTestable = testableRegex.test(comment.value);
@@ -44,7 +54,7 @@ module.exports = function (input) {
       return isTestable;
     }
 
-    const previousPath = path.getPrevSibling()
+    const previousPath = path.getPrevSibling();
     if (previousPath.node && previousPath.node.trailingComments) {
       const isTestable = previousPath.node.trailingComments.some((comment) => isTestableComment(comment));
       log('isPrevTrailingCommentTestable', isTestable);
@@ -53,17 +63,9 @@ module.exports = function (input) {
 
     log('No comments to process');
     return false;
-  }
+  };
 
-  const isTestEnvironment = () => {
-    const isTestEnv = (process.env.NODE_ENV === 'test' 
-      || process.env.BABEL_ENV === 'test'
-      || typeof global.it === 'function');
-      
-    log('isTestEnvironment', isTestEnv);
-    return isTestEnv;
-  }
-
+  // eslint-disable-next-line no-unused-vars
   const processDeclaration = (types, path, state) => {
     if (!enabled) {
       return;
@@ -100,6 +102,6 @@ module.exports = function (input) {
       ClassDeclaration(path, state) {
         processDeclaration(input.types, path, state);
       },
-    }
+    },
   };
-}
+};
