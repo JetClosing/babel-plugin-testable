@@ -1,4 +1,3 @@
-const nonTestable = 'test value';
-// @testable
+const nonTestable = 'test value'; // @testable
 
 export const testable = 'test value';
