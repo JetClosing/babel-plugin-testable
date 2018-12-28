@@ -56,6 +56,7 @@ module.exports = function (input) {
 
     const previousPath = path.getPrevSibling();
     if (previousPath.node && previousPath.node.trailingComments) {
+      /* istanbul ignore next: trailing is assigned to leading as well in latest babel */
       const isTestable = previousPath.node.trailingComments.some((comment) => isTestableComment(comment));
       log('isPrevTrailingCommentTestable', isTestable);
       return isTestable;

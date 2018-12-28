@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`babel env test 1`] = `
+"'use strict';
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+// @testable
+var testableConst = exports.testableConst = 'testable-const';
+
+var privateConst = 'private-const';"
+`;
+
+exports[`plugin disabled 1`] = `
+"'use strict';
+
+// @testable
+var testableConst = 'testable-const';
+
+var privateConst = 'private-const';"
+`;
