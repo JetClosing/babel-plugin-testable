@@ -2,7 +2,10 @@
 
 Babel plugin that exports private members for testing purposes
 
-![npm downloads total](https://img.shields.io/npm/dt/babel-plugin-testable.svg) ![npm version](https://img.shields.io/npm/v/babel-plugin-testable.svg) ![npm license](https://img.shields.io/npm/l/babel-plugin-testable.svg)
+[![NPM Total Downloads][icon-npm-total-downloads]][link-npm]
+[![NPM Version][icon-npm-version]][link-npm]
+[![NPM License][icon-npm-license]][link-npm]
+[![Build Status][icon-build-status]][link-build]
 
 ## Installation
 
@@ -103,3 +106,11 @@ export class TestableClass {
   // Class code
 }
 ```
+
+[icon-npm-total-downloads]: https://img.shields.io/npm/dt/babel-plugin-testable.svg
+[icon-npm-version]: https://img.shields.io/npm/v/babel-plugin-testable.svg
+[icon-npm-license]: https://img.shields.io/npm/l/babel-plugin-testable.svg
+[icon-build-status]: https://travis-ci.com/JetClosing/babel-plugin-testable.svg?branch=master
+
+[link-npm]: https://www.npmjs.com/package/babel-plugin-testable
+[link-build]: https://travis-ci.com/JetClosing/babel-plugin-testable
